@@ -1,9 +1,6 @@
-import React from 'react'
-
-function App() {
-  return (
-    <div>App</div>
-  )
-}
-
-export default App
+import Header from './components/Header.';
+import Skills from './components/Skills';
+import Home from './components/Home.';
+import About from './components/About.';
+import Portfolio from './components/Portfolio.';
+import Contact from './components/Contact.';
