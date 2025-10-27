@@ -1,13 +1,15 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <nav className="fixed top-0 left-0 w-full flex justify-around items-center px-8 py-4 bg-white/20 backdrop-blur-md text-black shadow-sm">
      
       <h1 className="text-6xl font-bold">Portfolio</h1>
+      <div>
       <ul className="flex gap-6">
         <li>
-          <a href="#home" className="hover:text-gray-700">
+          <a to='/' className="hover:text-gray-700">
             Home
           </a>
         </li>
@@ -27,6 +29,7 @@ export default function Header() {
           </a>
         </li>
       </ul>
+      </div>
       <button
         type="submit"
         className="bg-black text-white rounded p-2 hover:bg-gray-800 transition"
