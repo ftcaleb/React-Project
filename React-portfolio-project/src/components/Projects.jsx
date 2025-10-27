@@ -18,7 +18,7 @@ function Projects() {
         <div className="p-4">
           <h2 className="text-xl font-semibold mb-2">Startup Business Page</h2>
           <p className="text-gray-600 mb-4">
-            This is a short description for the first card.
+            Built a website for a tech startup company.
           </p>
           
           <button
@@ -46,7 +46,7 @@ function Projects() {
         <div className="p-4">
           <h2 className="text-xl font-semibold mb-2">Digital Clock Project</h2>
           <p className="text-gray-600 mb-4">
-            This is a short description for the second card.
+            Built a Digital Clock using HTML, CSS, and JavaScript.
           </p>
 
           <button
@@ -74,7 +74,7 @@ function Projects() {
         <div className="p-4">
           <h2 className="text-xl font-semibold mb-2">Nike Website Revamp</h2>
           <p className="text-gray-600 mb-4">
-            This is a short description for the third card.
+            Redesigned Nike.com
           </p>
           <button
         type="submit"
