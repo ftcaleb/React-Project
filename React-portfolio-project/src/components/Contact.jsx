@@ -1,6 +1,6 @@
 import React from "react";
 
-function Contact() {
+export default function Contact() {
   return (
 
     <div className="flex justify-center items-center h-screen">
@@ -43,4 +43,6 @@ function Contact() {
   )
 }
 
-export default Contact;
+
+
+

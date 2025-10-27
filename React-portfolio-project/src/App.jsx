@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Skills from "./components/Skills";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
