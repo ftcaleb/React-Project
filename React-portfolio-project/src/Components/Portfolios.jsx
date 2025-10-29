@@ -12,7 +12,7 @@ import { FaGithub, FaExternalLinkAlt, FaCloudDownloadAlt } from 'react-icons/fa'
 
 const projects = [
   {
-    title: "Tech Startup Website",
+    title: "Tech Startup Websit",
     description: "Built a website for a tech startup company.",
     image: tech,
     liveLink: "https://ftcaleb.github.io/Diamond-tech-website/",
