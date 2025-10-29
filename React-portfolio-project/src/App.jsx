@@ -5,7 +5,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Portfolios from "./components/Portfolios";
+import Portfolio from "./Components/Portfolio";
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 
@@ -16,7 +16,7 @@ export default function App() {
       <Header />
       <Hero />
       <About />
-      <Portfolios />
+      <Portfolio />
       <Skills />
       <Contact />
     
