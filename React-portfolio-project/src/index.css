@@ -11,8 +11,3 @@
     font-optical-sizing: auto;
   }}
 
-@layer components {
-  .wrap {
-    @apply h-screen flex flex-col justify-center items-center bg-red-600
-  }
-}

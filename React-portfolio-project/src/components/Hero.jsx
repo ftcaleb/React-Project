@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 
 function Hero() {
   return (
-    <div id='hero' className='wrap' >
+    <div id='hero' className='h-screen flex flex-col justify-center items-center bg-red-600' >
        <h1 className=' mx-auto max-w-4xl text-center text-5xl font-bold leading-tight tracking-[-1%] text-black sm:text-[64px] sm:leading-[76px]'><span className='text-white'>Boikanyo</span>.M</h1>
        <div className='text-5xl font-bold text-black text-bold mb-4'>
          <Typewriter
