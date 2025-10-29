@@ -11,7 +11,7 @@ export default function Header() {
         <a className="no-underline" href="#hero">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#portfolio">Projects</a>
+        <a href="#portfolios">Projects</a>
         <a href="#contact">Contact</a>
       </div>
       </div>
