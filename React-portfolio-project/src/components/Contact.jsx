@@ -3,7 +3,7 @@ import React from "react";
 export default function Contact() {
   return (
 
-    <div className="flex justify-center items-center h-screen">
+  <div className="flex justify-center items-center h-screen">
   <div className="h-2/3 w-full max-w-md bg-white shadow-lg rounded-lg flex justify-center items-center">
     
     <form className="flex flex-col gap-4 w-3/4">
@@ -33,7 +33,7 @@ export default function Contact() {
         type="submit"
         className="bg-black text-white rounded p-2 hover:bg-gray-800 transition"
       >
-        <a href="https://docs.google.com/document/d/1PNZsh68RfWuxae3dwyscG1cpIeWK7g4P/edit?usp=sharing&ouid=109721690072358248581&rtpof=true&sd=true">Download Resume</a>
+        <a href="https://docs.google.com/document/d/1PNZsh68RfWuxae3dwyscG1cpIeWK7g4P/edit?usp=sharing&ouid=109721690072358248581&rtpof=true&sd=true" className="no-underline">Download Resume</a>
       </button>
     </form>
   </div>

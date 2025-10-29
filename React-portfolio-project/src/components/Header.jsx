@@ -1,42 +1,29 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import caleb from '../assets/caleb.png';
 
 export default function Header() {
   return (
-    <nav className="fixed top-0 left-0 w-full flex justify-around items-center px-8 py-4 bg-white/20 backdrop-blur-md text-black shadow-sm">
-     
-      <h1 className="text-6xl font-bold">Portfolio</h1>
-      <div>
+   <nav className='fixed p-2 w-full flex justify-around items-center align-center   backdrop-blur-md text-black shadow-sm bg-white'>
+        <img src={caleb} alt="logo" className="w-15 h-auto"  />
+        <div>
       <ul className="flex gap-6">
-        <li>
-          <a to='/' className="hover:text-gray-700">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#about" className="hover:text-gray-700">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#contact" className="hover:text-gray-700">
-            Projects
-          </a>
-        </li>
-        <li>
-          <a href="#contact" className="hover:text-gray-700">
-            Contact
-          </a>
-        </li>
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+        <li>Contact</li>
       </ul>
       </div>
-      <button
-        type="submit"
-        className="bg-black text-white rounded p-2 hover:bg-gray-800 transition"
-      >
+
+    <button
+         type="submit"
+         className="bg-black text-white rounded p-2 hover:bg-gray-800 transition"
+       >
         
-        Contact Me
-      </button>
-    </nav>
+         Contact Me
+       </button>
+   </nav>
   );
 }
+
+
