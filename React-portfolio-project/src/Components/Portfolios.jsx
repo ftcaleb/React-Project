@@ -59,7 +59,7 @@ const projects = [
 
 
 
-function Portfolios() {
+export default function Portfolios() {
   return (
     <section id='portfolios' >
       <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-[1200px] mx-auto'>
@@ -98,4 +98,4 @@ function Portfolios() {
   )
 }
 
-export default Portfolios
+ 
