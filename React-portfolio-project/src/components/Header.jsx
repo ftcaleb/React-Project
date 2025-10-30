@@ -8,11 +8,11 @@ export default function Header() {
         <a href="#hero"><img src={caleb} alt="logo" className="w-15 h-auto"  /></a>
         <div>
       <div className="flex gap-6 no-underline">
-        <a className="no-underline" href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#portfolios">Projects</a>
-        <a href="#contact">Contact</a>
+        <a className="no-underline" href="#hero"><button className=" text-black rounded p-2 hover:text-red-600 transition">Home</button></a>
+        <a href="#about"><button className=" text-black rounded p-2 hover:text-red-600 transition">About</button></a>
+        <a href="#skills"><button className=" text-black rounded p-2 hover:text-red-600 transition">Skills</button></a>
+        <a href="#portfolios"><button className=" text-black rounded p-2 hover:text-red-600 transition">Projects</button></a>
+        <a href="#contact"><button className=" text-black rounded p-2 hover:text-red-600 transition">Contact</button></a>
       </div>
       </div>
 
