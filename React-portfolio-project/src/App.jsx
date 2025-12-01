@@ -2,7 +2,7 @@ import React from "react";
 import { BookingProvider } from "./Components/Booking";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import Contact from "./components/contact.jsx";
+import Contact from "./Components/Contact";
 import BookingSystem from "./Components/BookingSystem";
 import ConfirmBooking from "./Components/ConfirmBooking";
 

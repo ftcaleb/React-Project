@@ -67,7 +67,7 @@ export default function Contact() {
                 <input type='text' placeholder='Last Name' value={lastName} onChange={(e) => setLastName(e.target.value)} className='bg-white p-2' required/>
                 <input type='tel' placeholder='Tel (excl country code)' value={number} onChange={(e) => setNumber(e.target.value)} className='text-gray-700 bg-white p-2' required/>
                 <input type='email' placeholder='Email Address' value={email} onChange={(e) => setEmail(e.target.value)} className='text-gray-700 bg-white p-2' required/>
-                <input type='email' placeholder='Confirm Email Address' value={confirmationEmail} onChange={(e) => setConfirmationEmail(e.target.value)} className='bg-white p-2' required/>  
+                <input type='email' placeholder='Confirm Email Address' value={confirmationEmail} onChange={(e) => setConfirmationEmail(e.target.value)} className='bg-white p-2' required />  
         </div>
         {/* Special updates */}
         <div className='grid grid-cols-2 gap-2 mt-4'>
