@@ -1,56 +1,28 @@
 import React from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Skills from "./components/Skills";
+import { BookingProvider } from "./Components/Booking";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Portfolio from "./Components/Portfolio";
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-
+import Home from "./Pages/Home";
+import Contact from "./components/contact.jsx";
+import BookingSystem from "./Components/BookingSystem";
+import ConfirmBooking from "./Components/ConfirmBooking";
 
 
 export default function App() {
   return (
+    <BookingProvider>
     <div>
-      <Header />
-      <Hero />
-      <About />
-      <Portfolio />
-      <Skills />
-      <Contact />
-    
-
-    <footer className="bg-deep-pink text-black text-center py-6">
-        <p>© 2025 Boikanyo Mokoka. All rights reserved.</p>
-        <div className="flex justify-center gap-5 mt-6">
-                <a
-                  href="https://github.com/ftcaleb/React-Project.git"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-black bg-red-600 text-2xl p-2.5 rounded-full transition-all duration-300 ease-in-out hover:bg-hover-black hover:text-accent-pink hover:shadow-[0_010px#ffb6c1]"
-                >
-                  <FaGithub />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/caleb-mokoka-1911172a8/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-black bg-red-600 text-2xl p-2.5 rounded-full transition-all duration-300 ease-in-out hover:bg-hover-pink hover:text-accent-pink hover:shadow-[0_010px#ffb6c1]"
-                >
-                  <FaLinkedin />
-                </a>
-                <a
-                  href="https://www.instagram.com/alwaysbeencaleb/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                   className="text-black bg-red-600 text-2xl p-2.5 rounded-full transition-all duration-300 ease-in-out hover:bg-hover-pink hover:text-accent-pink hover:shadow-[0_010px#ffb6c1]"
-                >
-                  <FaInstagram />
-                </a>
-              </div>
-
-      </footer>
+      <Router>
+        <div className='min-h-screen bg-gray-100 flex items-center justify-center p-4'>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/booking-system" element={<BookingSystem />} />
+          <Route path="/confirm-booking" element={<ConfirmBooking />} />
+          
+        </Routes>
+        </div>
+      </Router>
       </div>
+      </BookingProvider>
   )
 }

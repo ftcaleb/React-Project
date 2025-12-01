@@ -1,10 +1,11 @@
 import React from 'react'
-import tech from '../assets/tech.jpg';
-import nike from '../assets/nike.jpg';
-import clock2 from '../assets/clock2.jpg';
-import quiz from '../assets/quiz.jpg';
-import menu from '../assets/menu.jpg';
-import melsoft from '../assets/melsoft.jpeg';
+import nike from '../assets/nikee.png';
+import clock1 from '../assets/clock1.png';
+import quiz from '../assets/quiz.png';
+import hustleai from '../assets/hustleai.png';
+import melsoft from '../assets/melsoftt.png';
+import portfolio from '../assets/portfolio.png';
+
 import { FaGithub, FaExternalLinkAlt, FaCloudDownloadAlt } from 'react-icons/fa';
 
 
@@ -12,16 +13,16 @@ import { FaGithub, FaExternalLinkAlt, FaCloudDownloadAlt } from 'react-icons/fa'
 
 const projects = [
   {
-    title: "Tech Startup Website",
+    title: "Portfolio Project",
     description: "Built a website for a tech startup company.",
-    image: tech,
-    liveLink: "https://ftcaleb.github.io/Diamond-tech-website/",
-    repoLink: "https://github.com/ftcaleb/Diamond-tech-website.git",
+    image: portfolio,
+    liveLink: "https://react-project-finale.vercel.app/",
+    repoLink: "https://github.com/ftcaleb/React-Project.git",
   },
   {
     title: "Digital Clock Application",
     description: "Built a Digital Clock using HTML, CSS, and JavaScript.",
-    image: clock2,
+    image: clock1,
     liveLink: "https://ftcaleb.github.io/Digital-Clock/",
     repoLink: "https://github.com/ftcaleb/Digital-Clock.git",
   },
@@ -47,11 +48,11 @@ const projects = [
     repoLink: "https://github.com/OfentseBaloyi/Melsoft-Bootstrap.git",
   },
     {
-    title: "Restuarant Menu Website  ",
-    description: "My First project where I built a Menu Website using HTML and CSS.",
-    image: menu,
-    liveLink: "https://ftcaleb.github.io/Project--1/",
-    repoLink: "https://github.com/ftcaleb/Project--1.git",
+    title: "Hackathon Projeect",
+    description: "My First Hackathon project where I placed 2nd among other candidates.",
+    image: hustleai,
+    liveLink: "https://hustle-ai-17e5ca12.base44.app/home",
+    repoLink: "https://github.com/Brendon-btd/HustleAI.git",
   },
   
   

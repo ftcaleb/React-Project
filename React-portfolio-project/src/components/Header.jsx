@@ -16,13 +16,15 @@ export default function Header() {
       </div>
       </div>
 
-    <a href="#contact"><button
+      <Link to="/contact">
+      <button
          type="submit"
          className="bg-black text-white rounded p-2 hover:bg-gray-800 transition"
        >
         
-         Contact Me
-       </button></a>
+         Book Me
+       </button>
+       </Link>
    </nav>
   );
 }
