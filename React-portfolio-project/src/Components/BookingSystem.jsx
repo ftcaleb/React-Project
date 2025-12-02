@@ -4,6 +4,12 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import { Link } from "react-router-dom";
 
+
+
+// first step of the booking process, 
+// Allows users to select the date via the calendar, 
+// -Time slot, and -Service
+// -All fields must be filled up to move on to the next page*/
 export default function BookingSystem({ onNext }) {
  
   const [date, setDate] = useState(new Date());
@@ -23,7 +29,7 @@ const [duration, setDuration] = useState("");
 const [DurationOpen, setDurationOpen] = useState(false);
 
 
-  
+
 
 
   return (

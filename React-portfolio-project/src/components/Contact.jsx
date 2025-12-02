@@ -59,7 +59,7 @@ export default function Contact() {
   return (
     <div className='bg-gray-100 shadow-lg w-full max-w-4xl p-6 rounded-2xl'>
         {/* Details are placed in a grid */}
-        <div className='bg-gray-700 p-4 rounded-lg text-white'>Enter your details</div>
+        <div className='bg-red-600 p-4 rounded-lg text-white'>Enter your details</div>
         <div className='grid grid-cols-2 gap-2 mt-4'>
             {/* Customer personal details */}
                 <input type='text' autoComplete='name' placeholder='First Name' value={firstName} onChange={(e) => setFirstName(e.target.value)} className='text-gray-700 bg-white p-2' required/>
@@ -71,34 +71,18 @@ export default function Contact() {
         </div>
         {/* Special updates */}
         <div className='grid grid-cols-2 gap-2 mt-4'>
-            <p>I'd like to receive updates & special offers from:</p>
-            <p>
-                Dineplan
-            </p>
-            <label>
-                <span>Email </span>
-                <input type='checkbox'/>
-            </label>
-            <p>
-                Billy G Gold Reef City Casino Email
-            </p>
-            <label>
-                <span>Email </span>          
-                <input type='checkbox'/>
-                <span>SMS </span> 
-                <input type='checkbox'/>
-            </label>  
+            
 
             {/* Back and next button */}
             <div className='flex flex-cols-1 justify-center gap-4 '>
             <Link to='/'>
             <button
-            className='bg-blue-500 hover:bg-blue-600 text-white p-2 w-full rounded-lg'>Back</button>
+            className='bg-black hover:bg-red-600 hover:text-black text-white p-2 w-full rounded-lg'>Back</button>
             </Link>
             <Link to='/booking-system'>
             <button
             onClick={onNext}
-            className='bg-green-500 text-white hover:bg-green-600 p-2 w-full rounded-lg'>Next</button>
+            className='bg-red-600 text-black hover:text-white hover:bg-black p-2 w-full rounded-lg transition'>Next</button>
             </Link>
         </div>
         </div>
