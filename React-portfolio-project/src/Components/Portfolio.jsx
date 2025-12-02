@@ -1,8 +1,8 @@
 import React from 'react'
-import nike from '../assets/nikee.png';
+import nike from '../assets/Nikee.png';
 import clock1 from '../assets/clock1.png';
 import quiz from '../assets/quiz.png';
-import hustleai from '../assets/hustleai.png';
+import hustleai from '../assets/Hustleai.png';
 import melsoft from '../assets/melsoftt.png';
 import portfolio from '../assets/portfolio.png';
 
