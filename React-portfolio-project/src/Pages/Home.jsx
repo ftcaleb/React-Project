@@ -1,10 +1,10 @@
 import React from 'react'
-import Header from "../components/Header";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Skills from "../components/Skills";
-import Footer from '../components/Footer';
-import Portfolio from '../components/Portfolio';
+import Header from "../Components/Header";
+import Hero from "../Components/Hero";
+import About from "../Components/About";
+import Skills from "../Components/Skills";
+import Footer from '../Components/Footer';
+import Portfolio from '../Components/Portfolio';
 
 function Home() {
   return (
