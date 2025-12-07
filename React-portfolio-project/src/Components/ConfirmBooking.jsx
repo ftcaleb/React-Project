@@ -24,7 +24,7 @@ function ConfirmBooking() {
   const handleSaveBooking = async () => {
     setIsSaving(true);
     try {
-      const response = await fetch("/api/bookings", {
+      const response = await fetch("https://react-project-blw8.onrender.com/api/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
