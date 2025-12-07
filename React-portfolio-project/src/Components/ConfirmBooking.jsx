@@ -34,7 +34,7 @@ function ConfirmBooking() {
           date,
           time,
           service,
-          duration
+          duration,
         })
       });
 
