@@ -1,31 +1,32 @@
-// backend/server.js
-// Main Express server setup
-
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import routes from "./routes.js";
 
-dotenv.config();
-
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors()); // Enable cross-origin requests
-app.use(express.json()); // Parse JSON request bodies
+// --- FIXED CORS ---
+app.use(cors({
+  origin: "*",                     // allow all for testing
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"]
+}));
 
-// API routes
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+// Routes
 app.use("/api", routes);
 
-// 404 handler
-app.use((req, res) => res.status(404).json({ error: "Not found" }));
-
-// Global error handler
-app.use((err, req, res, next) => {
-  console.error("Unhandled error:", err);
-  res.status(500).json({ error: "Internal server error" });
+// Root
+app.get("/", (req, res) => {
+  res.json({
+    status: "OK",
+    message: "Booking backend root",
+    timestamp: new Date().toISOString()
+  });
 });
 
-// Start server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});

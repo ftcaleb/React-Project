@@ -1,75 +1,93 @@
-// backend/routes.js
 import express from "express";
-import { supabase } from "./supabase.js";
+import { v4 as uuidv4 } from "uuid";
 
 const router = express.Router();
 
-/**
- * POST /api/bookings
- * Create a new booking
- */
-router.post("/bookings", async (req, res) => {
-  try {
-    const { fullname, email, phone, date, time, service, duration } = req.body;
+// In-memory storage (resets on server restart)
+const bookings = [];
 
-    if (!fullname || !email || !phone || !date || !time || !service) {
-      return res.status(400).json({ error: "Missing required fields." });
+// Validate booking payload
+function validateBookingPayload(payload) {
+  const { fullname, email, phone, date, time, service } = payload;
+
+  if (!fullname || !email || !phone || !date || !time || !service) {
+    return { ok: false, message: "Missing required fields." };
+  }
+
+  const parsed = new Date(date);
+  if (Number.isNaN(parsed.getTime())) {
+    return { ok: false, message: "Invalid date format." };
+  }
+
+  return { ok: true };
+}
+
+// CREATE BOOKING — POST /api/bookings
+router.post("/bookings", (req, res) => {
+  try {
+    const payload = req.body;
+
+    const validation = validateBookingPayload(payload);
+    if (!validation.ok) {
+      return res.status(400).json({ error: validation.message });
     }
 
-    // Check if slot is already booked
-    const { data: existing, error: checkError } = await supabase
-      .from("bookings")
-      .select("id")
-      .eq("date", date)
-      .eq("time", time)
-      .eq("service", service)
-      .limit(1);
+    const { fullname, email, phone, date, time, service, duration } = payload;
 
-    if (checkError) return res.status(500).json({ error: "Error checking availability." });
-    if (existing && existing.length > 0) return res.status(409).json({ error: "Slot already booked." });
+    // Check if slot already booked
+    const conflict = bookings.find(
+      (b) => b.date === date && b.time === time && b.service === service
+    );
 
-    // Insert booking
-    const { data, error } = await supabase
-      .from("bookings")
-      .insert([{ fullname, email, phone, date, time, service, duration }])
-      .select()
-      .single();
+    if (conflict) {
+      return res.status(409).json({ error: "Slot already booked." });
+    }
 
-    if (error) return res.status(500).json({ error: "Failed to create booking." });
+    const newBooking = {
+      id: uuidv4(),
+      fullname,
+      email,
+      phone,
+      date,
+      time,
+      service,
+      duration: duration || null,
+      createdAt: new Date().toISOString(),
+    };
 
-    res.status(201).json({ booking: data });
+    bookings.push(newBooking);
+
+    return res.status(201).json({
+      message: "Booking created successfully",
+      booking: newBooking,
+    });
+
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server error creating booking." });
+    console.error("Error creating booking:", err);
+    return res.status(500).json({ error: "Server error creating booking." });
   }
 });
 
-/**
- * GET /api/bookings
- * List all bookings
- */
-router.get("/bookings", async (req, res) => {
+// GET ALL BOOKINGS — GET /api/bookings
+router.get("/bookings", (req, res) => {
   try {
-    const { data, error } = await supabase
-      .from("bookings")
-      .select("*")
-      .order("created_at", { ascending: false });
+    const sorted = [...bookings].sort(
+      (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+    );
 
-    if (error) return res.status(500).json({ error: "Failed to fetch bookings." });
-
-    res.status(200).json({ bookings: data });
+    return res.status(200).json({ bookings: sorted });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server error fetching bookings." });
+    console.error("Error fetching bookings:", err);
+    return res.status(500).json({ error: "Server error fetching bookings." });
   }
 });
 
-/**
- * GET /
- * Health check
- */
+// HEALTH CHECK
 router.get("/", (req, res) => {
-  res.json({ status: "ok", message: "Booking backend running" });
+  res.json({
+    status: "ok",
+    message: "Booking backend running (in-memory storage)"
+  });
 });
 
 export default router;
