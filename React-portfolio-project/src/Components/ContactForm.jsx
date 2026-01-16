@@ -29,14 +29,16 @@ export default function ContactForrm() {
       className="flex items-center justify-center min-h-[700px] bg-black py-10 px-4 text-white"
     >
         <div className="flex flex-wrap justify-between items-start w-full max-w-[1100px] gap-8">
-
+       
         <div className="flex-1 min-w-[320px] flex justify-center">
+    
+            
           <form ref={form}
             id="contact-form"
             onSubmit={sendEmail}
             className="bg-transparent border border-white  p-8 rounded shadow-custom w-full max-w-[600px] text-white"
           >
-            <h3 className="text-2xl text-center mb-6">Send Me a Message </h3>
+            
 
             <label className="block font-bold mb-2" htmlFor="name">Full Name</label>
             <input
