@@ -7,18 +7,20 @@ export default function ContactForrm() {
     e.preventDefault();
 
     emailjs.sendForm(
-      'service_mk9004s',
-      'template_ef0awf1',
-      form.current,
-      '1EDZzJVQU9AivIfmy'
-    )
-    .then(() => {
-      alert('Message sent successfully!');
-      form.reset();
-    })
-    ((error) => {
-      alert('Failed to send message. Please try again.');
-    });
+  'service_mk9004s',
+  'template_ef0awf1',
+  form.current,
+  '1EDZzJVQU9AivIfmy'
+)
+.then(() => {
+  alert('Message sent successfully!');
+  form.current.reset();
+})
+.catch((error) => {
+  alert('Failed to send message. Please try again.');
+  console.error(error);
+});
+
   };
 
   return (
